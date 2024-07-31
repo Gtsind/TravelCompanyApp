@@ -56,4 +56,16 @@ public class Ticket {
         this.paymentAmount = paymentAmount;
     }
 
+    public Ticket(int id, int passengerId, int itineraryId, PaymentMethodType paymentMethod) {
+        this.id = id;
+        this.passengerId = passengerId;
+        this.itineraryId = itineraryId;
+        this.paymentMethod = paymentMethod;
+    }
+
+    @Override
+    public String toString() {
+        return "Ticket{" + "id=" + id + ", passengerId=" + passengerId + ", itineraryId=" + itineraryId + ", paymentMethod=" + paymentMethod + ", paymentAmount=" + paymentAmount + '}';
+    }
+
 }

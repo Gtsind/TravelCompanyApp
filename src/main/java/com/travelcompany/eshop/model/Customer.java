@@ -7,7 +7,7 @@ public class Customer {
     private String email;
     private String address;
     private String nationality;
-    private CustomerType category;
+    private CustomerType customerType;
 
     public int getId() {
         return id;
@@ -49,21 +49,26 @@ public class Customer {
         this.nationality = nationality;
     }
 
-    public CustomerType getCategory() {
-        return category;
+    public CustomerType getCustomerType() {
+        return customerType;
     }
 
-    public void setCategory(CustomerType category) {
-        this.category = category;
+    public void setCustomerType(CustomerType customerType) {
+        this.customerType = customerType;
     }
 
-    public Customer(int id, String name, String email, String address, String nationality, CustomerType category) {
+    public Customer(int id, String name, String email, String address, String nationality, CustomerType customerType) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.address = address;
         this.nationality = nationality;
-        this.category = category;
+        this.customerType = customerType;
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{" + "id=" + id + ", name=" + name + ", email=" + email + ", address=" + address + ", nationality=" + nationality + ", category=" + customerType + '}';
     }
 
 }

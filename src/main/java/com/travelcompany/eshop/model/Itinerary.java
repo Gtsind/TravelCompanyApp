@@ -4,9 +4,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-
 public class Itinerary {
-    
+
     private int id;
     private String departure;
     private String destination;
@@ -62,7 +61,7 @@ public class Itinerary {
         this.basePrice = basePrice;
     }
 
-    public Itinerary(int id, String departure, String destination, String departureDate ,String airlineName, double basePrice) {
+    public Itinerary(int id, String departure, String destination, String departureDate, String airlineName, double basePrice) {
         this.id = id;
         this.departure = departure;
         this.destination = destination;
@@ -70,13 +69,19 @@ public class Itinerary {
         this.airlineName = airlineName;
         this.basePrice = basePrice;
     }
-    
+
     private Date parseDate(String dateStr) {
-            try {
-                return new SimpleDateFormat("dd/MM/yyyy HH:mm").parse(dateStr);
-            } catch (ParseException e) {
-                e.printStackTrace();
-                return null;
-            }
+        try {
+            return new SimpleDateFormat("dd/MM/yyyy HH:mm").parse(dateStr);
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return null;
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Itinerary{" + "id=" + id + ", departure=" + departure + ", destination=" + destination + ", departureDate=" + departureDate + ", airlineName=" + airlineName + ", basePrice=" + basePrice + '}';
+    }
+
 }
